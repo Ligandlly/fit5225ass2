@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactDOMServer from 'react-dom/server'
 import axios from 'axios'
-
+import instance from '../utils/axios-config';
 const { TextArea } = Input;
 
 
