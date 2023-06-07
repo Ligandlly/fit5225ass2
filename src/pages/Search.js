@@ -4,6 +4,7 @@ import React, {useState, useEffect} from 'react';
 
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import instance from '../utils/axios-config';
 
 const { Search } = Input;
 const { Column, ColumnGroup } = Table;
@@ -67,7 +68,7 @@ const MySearch = () => {
 
     // 发起网络请求
     try {
-      axios({
+      instance({
         method: 'GET',
         url: getTagUrl,
         params: params
@@ -92,12 +93,12 @@ const MySearch = () => {
     const [mylist, setList] = useState(datalist)
   
     const ImageDeleteClickHandler = (filename, url) => {
-      const deleteUrl = '/delete'
+      const deleteUrl = '/'
       console.log('删除的filename', filename)
       console.log('删除的url', url)
       // 先在aws里删除
       try {
-        axios({
+        instance({
           method: 'DELETE',
           url: deleteUrl,
           data: {

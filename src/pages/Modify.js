@@ -46,8 +46,8 @@ const Modify = () => {
   const searchHandler = () => {
     if (imageKey !== '') {
       console.log('根据imagekey查询', imageKey)
-      const getTagUrl='/files'
-      axios({
+      const getTagUrl='/filename'
+      instance({
         method: 'GET',
         url: getTagUrl+imageKey,
       }).then(
@@ -73,7 +73,7 @@ const Modify = () => {
       console.log('修改方式：', modifyMethod)
       console.log('修改图片链接：', imageURL)
       console.log('提交的tag:', imageNewTags)
-      const modifyTagUrl='/tags'
+      const modifyTagUrl='/https://bolnwx1949.execute-api.us-east-1.amazonaws.com/alpha/tags'
       try {
         var tagsUpdate = JSON.parse(imageNewTags)
       } catch (error) {
